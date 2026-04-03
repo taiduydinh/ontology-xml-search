@@ -1,0 +1,1671 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rdf:RDF
+    xmlns:rss="http://purl.org/rss/1.0/"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:jms="http://jena.hpl.hp.com/2003/08/jms#"
+    xmlns="http://localhost:8080/unnamed.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://localhost:8080/unnamed.owl#">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="document-pendere"/>
+  <owl:Class rdf:ID="element_de_connaissance">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="concept_generique"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="presentateur">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#facilitateur"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="cours">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ressources-pedagogiques"/>
+    </rdfs:subClassOf>
+    <owl:sameAs>
+      <owl:Class rdf:about="#scenario"/>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:ID="Page-web">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#documentation-complementaire"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="acteurs"/>
+  <owl:Class rdf:ID="gestionnaire">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#facilitateur"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="information-sur-lien"/>
+  <owl:Class rdf:ID="didacticiel">
+    <rdfs:subClassOf rdf:resource="#concept_generique"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Article-scientifique">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Article"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="facilitateur">
+    <rdfs:subClassOf rdf:resource="#acteurs"/>
+  </owl:Class>
+  <owl:Class rdf:ID="concept">
+    <rdfs:subClassOf rdf:resource="#concept_generique"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#forme-de"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Article">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#documentation-complementaire"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Guide">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Livre"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="formateur">
+    <rdfs:subClassOf rdf:resource="#facilitateur"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Note">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#documentation-complementaire"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Manuel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Livre"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Journal">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#documentation-complementaire"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="concepteur">
+    <rdfs:subClassOf rdf:resource="#facilitateur"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Livre">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#documentation-complementaire"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Proceeding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#documentation-complementaire"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="documentation-complementaire">
+    <rdfs:subClassOf rdf:resource="#ressources-pedagogiques"/>
+  </owl:Class>
+  <owl:Class rdf:ID="apprenant">
+    <rdfs:subClassOf rdf:resource="#acteurs"/>
+  </owl:Class>
+  <owl:Class rdf:ID="scenario">
+    <rdfs:subClassOf rdf:resource="#concept_generique"/>
+    <owl:sameAs rdf:resource="#cours"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="enseigne1">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#appartient-a-scenario"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#element_de_connaissance"/>
+    <rdfs:domain rdf:resource="#scenario"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sous-type">
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="implication">
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="collection-doc">
+    <rdfs:range rdf:resource="#document-pendere"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pour un concept un ou plusieurs document sont attachees
+</rdfs:comment>
+    <rdfs:domain rdf:resource="#concept_generique"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="constitue-de">
+    <rdfs:domain rdf:resource="#didacticiel"/>
+    <rdfs:range rdf:resource="#scenario"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="appartient-a-concept">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#forme-de"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#element_de_connaissance"/>
+    <rdfs:range rdf:resource="#concept"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="reference">
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="cause-resultat">
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="instance">
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="contribue-a-enseigner">
+    <rdfs:range rdf:resource="#concept"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#est-enseigne-par"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#scenario"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="precede-par">
+    <rdfs:domain rdf:resource="#concept"/>
+    <rdfs:range rdf:resource="#concept"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#precede"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="doc">
+    <rdfs:range rdf:resource="#documentation-complementaire"/>
+    <rdfs:domain rdf:resource="#document-pendere"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="enseigne">
+    <rdfs:range rdf:resource="#concept"/>
+    <rdfs:domain rdf:resource="#didacticiel"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#est-enseigne-par-didacticiel"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="lien-semantique"/>
+  <owl:ObjectProperty rdf:ID="sequentiel">
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forme-de">
+    <rdfs:range rdf:resource="#element_de_connaissance"/>
+    <rdfs:domain rdf:resource="#concept"/>
+    <owl:inverseOf rdf:resource="#appartient-a-concept"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="similaire">
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+    <rdfs:range rdf:resource="#information-sur-lien"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="est-enseigne-par-didacticiel">
+    <owl:inverseOf rdf:resource="#enseigne"/>
+    <rdfs:domain rdf:resource="#concept"/>
+    <rdfs:range rdf:resource="#didacticiel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="precede">
+    <rdfs:range rdf:resource="#concept"/>
+    <rdfs:domain rdf:resource="#concept"/>
+    <owl:inverseOf rdf:resource="#precede-par"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="appartient-a-scenario">
+    <rdfs:range rdf:resource="#scenario"/>
+    <rdfs:domain rdf:resource="#element_de_connaissance"/>
+    <owl:inverseOf rdf:resource="#enseigne1"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="document-final">
+    <rdfs:range rdf:resource="#documentation-complementaire"/>
+    <rdfs:domain rdf:resource="#information-sur-lien"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="est-enseigne-par">
+    <rdfs:domain rdf:resource="#concept"/>
+    <owl:inverseOf rdf:resource="#contribue-a-enseigner"/>
+    <rdfs:range rdf:resource="#scenario"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="titre">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="adresse">
+    <rdfs:domain rdf:resource="#scenario"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="auteurs">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Article"/>
+          <owl:Class rdf:about="#Journal"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="date">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Article"/>
+          <owl:Class rdf:about="#Journal"/>
+          <owl:Class rdf:about="#Proceeding"/>
+          <owl:Class rdf:about="#Livre"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="profil">
+    <rdfs:domain rdf:resource="#apprenant"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="adresse-doc">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="poid-concept">
+    <rdfs:domain rdf:resource="#document-pendere"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isbn">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Livre"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="degree-certitude">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#information-sur-lien"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="format">
+    <rdfs:domain rdf:resource="#Article"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="num">
+    <rdfs:domain rdf:resource="#documentation-complementaire"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:ID="precede-par2">
+    <rdfs:range rdf:resource="#scenario"/>
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="#precede2"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#scenario"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:ID="precede-par1">
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="#precede1"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#element_de_connaissance"/>
+    <rdfs:domain rdf:resource="#element_de_connaissance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:ID="precede2">
+    <rdfs:range rdf:resource="#scenario"/>
+    <rdfs:domain rdf:resource="#scenario"/>
+    <owl:inverseOf rdf:resource="#precede-par2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:TransitiveProperty rdf:ID="precede1">
+    <rdfs:domain rdf:resource="#element_de_connaissance"/>
+    <rdfs:range rdf:resource="#element_de_connaissance"/>
+    <owl:inverseOf rdf:resource="#precede-par1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <element_de_connaissance rdf:ID="Agrégation">
+    <precede-par1>
+      <element_de_connaissance rdf:ID="Classe">
+        <appartient-a-concept>
+          <concept rdf:ID="UML">
+            <est-enseigne-par>
+              <scenario rdf:ID="Niveau_conceptuel">
+                <enseigne1 rdf:resource="#Classe"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Methodes_de_classe">
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                    <appartient-a-concept rdf:resource="#UML"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Arttributs_de_classe">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagrammes_de_classes">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <precede2>
+                  <scenario rdf:ID="Niveau_interne">
+                    <precede2>
+                      <scenario rdf:ID="Sgbd_relationnel">
+                        <precede2>
+                          <scenario rdf:ID="Sgbd_objet">
+                            <precede-par2 rdf:resource="#Sgbd_relationnel"/>
+                          </scenario>
+                        </precede2>
+                        <precede2>
+                          <scenario rdf:ID="SQL">
+                            <enseigne1>
+                              <element_de_connaissance rdf:ID="L_ordre_DROP_VIEW">
+                                <appartient-a-concept>
+                                  <concept rdf:ID="Langage_de_description_de_données">
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="L_ordre_CREATE_VIEW">
+                                        <appartient-a-concept rdf:resource="#Langage_de_description_de_données"/>
+                                        <appartient-a-scenario rdf:resource="#SQL"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="L_ordre_DROP_INDEX">
+                                        <appartient-a-concept rdf:resource="#Langage_de_description_de_données"/>
+                                        <appartient-a-scenario rdf:resource="#SQL"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <forme-de rdf:resource="#L_ordre_DROP_VIEW"/>
+                                    <est-enseigne-par rdf:resource="#SQL"/>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="L_ordre_CREATE_INDEX">
+                                        <appartient-a-scenario rdf:resource="#SQL"/>
+                                        <appartient-a-concept rdf:resource="#Langage_de_description_de_données"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="L_ordre_DROP_TABLE">
+                                        <appartient-a-concept rdf:resource="#Langage_de_description_de_données"/>
+                                        <appartient-a-scenario rdf:resource="#SQL"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="L_ordre_CREATE_TABLE">
+                                        <appartient-a-concept rdf:resource="#Langage_de_description_de_données"/>
+                                        <appartient-a-scenario rdf:resource="#SQL"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="Les_types_de_données">
+                                        <appartient-a-concept rdf:resource="#Langage_de_description_de_données"/>
+                                        <appartient-a-scenario rdf:resource="#SQL"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <precede>
+                                      <concept rdf:ID="Langage_de_manipulation_de_données">
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="L_odre_UPDATE">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_clause_GROUP_BY">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="L_ordre_INSERT">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_jointure_RIGHT_OUTER_OIN">
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="L_ordre_DELETE">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_jointure_LEFT_OUTER_JOIN">
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_fonction_MIN">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <precede>
+                                          <concept rdf:ID="Langage_de_controle_de_données">
+                                            <forme-de>
+                                              <element_de_connaissance rdf:ID="L_ordre_REVOKE">
+                                                <appartient-a-concept rdf:resource="#Langage_de_controle_de_données"/>
+                                                <appartient-a-scenario rdf:resource="#SQL"/>
+                                              </element_de_connaissance>
+                                            </forme-de>
+                                            <forme-de>
+                                              <element_de_connaissance rdf:ID="L_ordre_GRANT">
+                                                <appartient-a-concept rdf:resource="#Langage_de_controle_de_données"/>
+                                                <appartient-a-scenario rdf:resource="#SQL"/>
+                                              </element_de_connaissance>
+                                            </forme-de>
+                                            <precede-par rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <est-enseigne-par rdf:resource="#SQL"/>
+                                          </concept>
+                                        </precede>
+                                        <precede-par rdf:resource="#Langage_de_description_de_données"/>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_fonction_AVG">
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_jointure_INNER_JOIN">
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_fonction_COUNT">
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="L_ordre_SELECT">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_fonction_SUM">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_fonction_MAX">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_clause_ORDRED_BY">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_clause_FROM">
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <est-enseigne-par rdf:resource="#SQL"/>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="La_clause_WHERE">
+                                            <appartient-a-concept rdf:resource="#Langage_de_manipulation_de_données"/>
+                                            <appartient-a-scenario rdf:resource="#SQL"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                      </concept>
+                                    </precede>
+                                  </concept>
+                                </appartient-a-concept>
+                                <appartient-a-scenario rdf:resource="#SQL"/>
+                              </element_de_connaissance>
+                            </enseigne1>
+                            <precede-par2 rdf:resource="#Sgbd_relationnel"/>
+                            <enseigne1 rdf:resource="#L_ordre_CREATE_TABLE"/>
+                            <enseigne1 rdf:resource="#La_fonction_MAX"/>
+                            <contribue-a-enseigner rdf:resource="#Langage_de_manipulation_de_données"/>
+                            <enseigne1 rdf:resource="#La_fonction_MIN"/>
+                            <enseigne1 rdf:resource="#L_ordre_CREATE_INDEX"/>
+                            <enseigne1 rdf:resource="#La_clause_GROUP_BY"/>
+                            <enseigne1 rdf:resource="#La_fonction_AVG"/>
+                            <enseigne1 rdf:resource="#L_ordre_INSERT"/>
+                            <enseigne1 rdf:resource="#L_ordre_GRANT"/>
+                            <enseigne1 rdf:resource="#La_clause_FROM"/>
+                            <enseigne1 rdf:resource="#La_fonction_COUNT"/>
+                            <enseigne1 rdf:resource="#L_ordre_DROP_INDEX"/>
+                            <contribue-a-enseigner rdf:resource="#Langage_de_controle_de_données"/>
+                            <enseigne1 rdf:resource="#L_ordre_CREATE_VIEW"/>
+                            <adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >scena3.html</adresse>
+                            <enseigne1 rdf:resource="#L_odre_UPDATE"/>
+                            <enseigne1 rdf:resource="#La_jointure_INNER_JOIN"/>
+                            <enseigne1 rdf:resource="#Les_types_de_données"/>
+                            <enseigne1 rdf:resource="#La_jointure_RIGHT_OUTER_OIN"/>
+                            <enseigne1 rdf:resource="#La_fonction_SUM"/>
+                            <enseigne1 rdf:resource="#L_ordre_DELETE"/>
+                            <enseigne1 rdf:resource="#L_ordre_REVOKE"/>
+                            <enseigne1 rdf:resource="#La_jointure_LEFT_OUTER_JOIN"/>
+                            <enseigne1 rdf:resource="#L_ordre_SELECT"/>
+                            <enseigne1 rdf:resource="#La_clause_ORDRED_BY"/>
+                            <contribue-a-enseigner rdf:resource="#Langage_de_description_de_données"/>
+                            <enseigne1 rdf:resource="#La_clause_WHERE"/>
+                            <enseigne1 rdf:resource="#L_ordre_DROP_TABLE"/>
+                          </scenario>
+                        </precede2>
+                        <precede-par2 rdf:resource="#Niveau_interne"/>
+                        <precede-par2 rdf:resource="#Niveau_conceptuel"/>
+                        <precede-par2>
+                          <scenario rdf:ID="Niveau_externe">
+                            <enseigne1>
+                              <element_de_connaissance rdf:ID="Entete_de_formulaire">
+                                <appartient-a-scenario rdf:resource="#Niveau_externe"/>
+                                <appartient-a-concept>
+                                  <concept rdf:ID="Les_états">
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="Page">
+                                        <appartient-a-scenario rdf:resource="#Niveau_externe"/>
+                                        <appartient-a-concept rdf:resource="#Les_états"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <forme-de rdf:resource="#Entete_de_formulaire"/>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="Entete_de_page">
+                                        <appartient-a-scenario rdf:resource="#Niveau_externe"/>
+                                        <appartient-a-concept rdf:resource="#Les_états"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <est-enseigne-par rdf:resource="#Niveau_externe"/>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="Pied_de_page">
+                                        <appartient-a-scenario rdf:resource="#Niveau_externe"/>
+                                        <appartient-a-concept rdf:resource="#Les_états"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                  </concept>
+                                </appartient-a-concept>
+                              </element_de_connaissance>
+                            </enseigne1>
+                            <enseigne1 rdf:resource="#Page"/>
+                            <contribue-a-enseigner>
+                              <concept rdf:ID="Les_formulaires">
+                                <est-enseigne-par rdf:resource="#Niveau_externe"/>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="Formulaires_de_distribution">
+                                    <appartient-a-concept rdf:resource="#Les_formulaires"/>
+                                    <appartient-a-scenario rdf:resource="#Niveau_externe"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="Formulaires_de_présentation_de_données">
+                                    <appartient-a-concept rdf:resource="#Les_formulaires"/>
+                                    <appartient-a-scenario rdf:resource="#Niveau_externe"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                              </concept>
+                            </contribue-a-enseigner>
+                            <enseigne1 rdf:resource="#Formulaires_de_distribution"/>
+                            <enseigne1 rdf:resource="#Pied_de_page"/>
+                            <precede-par2 rdf:resource="#Niveau_conceptuel"/>
+                            <precede2 rdf:resource="#Sgbd_relationnel"/>
+                            <enseigne1 rdf:resource="#Entete_de_page"/>
+                            <enseigne1 rdf:resource="#Formulaires_de_présentation_de_données"/>
+                            <contribue-a-enseigner rdf:resource="#Les_états"/>
+                          </scenario>
+                        </precede-par2>
+                      </scenario>
+                    </precede2>
+                    <precede-par2 rdf:resource="#Niveau_conceptuel"/>
+                  </scenario>
+                </precede2>
+                <precede2 rdf:resource="#Sgbd_relationnel"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Héritage">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <precede-par1 rdf:resource="#Classe"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Attribut">
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                    <precede-par1>
+                      <element_de_connaissance rdf:ID="Entité">
+                        <appartient-a-concept>
+                          <concept rdf:ID="Entité_association">
+                            <forme-de rdf:resource="#Attribut"/>
+                            <est-enseigne-par rdf:resource="#Niveau_conceptuel"/>
+                            <precede rdf:resource="#UML"/>
+                            <collection-doc>
+                              <document-pendere>
+                                <poid-concept>0.8</poid-concept>
+                                <doc>
+                                  <Article rdf:ID="document3">
+                                    <date>2004</date>
+                                    <adresse-doc>doc3.html</adresse-doc>
+                                    <auteurs></auteurs>
+                                    <format>PDF</format>
+                                    <num>3</num>
+                                  </Article>
+                                </doc>
+                              </document-pendere>
+                            </collection-doc>
+                            <forme-de rdf:resource="#Entité"/>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="Type_d_entité">
+                                <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                                <precede-par1 rdf:resource="#Entité"/>
+                                <appartient-a-concept rdf:resource="#Entité_association"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="Cardinalités">
+                                <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                                <appartient-a-concept rdf:resource="#Entité_association"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="Référence">
+                                <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                                <precede-par1 rdf:resource="#Entité"/>
+                                <appartient-a-concept rdf:resource="#Entité_association"/>
+                                <precede-par1 rdf:resource="#Attribut"/>
+                                <collection-doc>
+                                  <document-pendere>
+                                    <doc>
+                                      <Page-web rdf:ID="document5">
+                                        <adresse-doc>doc5.html</adresse-doc>
+                                      </Page-web>
+                                    </doc>
+                                    <poid-concept>0.9</poid-concept>
+                                  </document-pendere>
+                                </collection-doc>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="Type_d_association">
+                                <precede-par1>
+                                  <element_de_connaissance rdf:ID="Association">
+                                    <precede-par1 rdf:resource="#Entité"/>
+                                    <precede1 rdf:resource="#Type_d_association"/>
+                                  </element_de_connaissance>
+                                </precede-par1>
+                                <appartient-a-concept rdf:resource="#Entité_association"/>
+                                <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                          </concept>
+                        </appartient-a-concept>
+                        <collection-doc>
+                          <document-pendere>
+                            <poid-concept>0.9</poid-concept>
+                            <doc>
+                              <Page-web rdf:ID="document7">
+                                <adresse-doc>doc7.html</adresse-doc>
+                              </Page-web>
+                            </doc>
+                          </document-pendere>
+                        </collection-doc>
+                        <collection-doc>
+                          <document-pendere>
+                            <doc>
+                              <Page-web rdf:ID="document1">
+                                <adresse-doc>doc1.html</adresse-doc>
+                                <cause-resultat>
+                                  <information-sur-lien>
+                                    <degree-certitude rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#float"
+                                    >0.8</degree-certitude>
+                                    <document-final>
+                                      <Page-web rdf:ID="document4">
+                                        <adresse-doc>doc4.html</adresse-doc>
+                                        <implication>
+                                          <information-sur-lien>
+                                            <degree-certitude
+                                             rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                                            >0.8</degree-certitude>
+                                            <document-final>
+                                              <Article rdf:ID="document2">
+                                                <num>2</num>
+                                                <date>2004</date>
+                                                <auteurs></auteurs>
+                                                <format>PDF</format>
+                                                <adresse-doc>doc2.html</adresse-doc>
+                                              </Article>
+                                            </document-final>
+                                          </information-sur-lien>
+                                        </implication>
+                                      </Page-web>
+                                    </document-final>
+                                  </information-sur-lien>
+                                </cause-resultat>
+                              </Page-web>
+                            </doc>
+                            <poid-concept>0.8</poid-concept>
+                          </document-pendere>
+                        </collection-doc>
+                        <precede1 rdf:resource="#Association"/>
+                        <precede1 rdf:resource="#Type_d_entité"/>
+                        <precede1 rdf:resource="#Référence"/>
+                        <precede1 rdf:resource="#Attribut"/>
+                      </element_de_connaissance>
+                    </precede-par1>
+                    <appartient-a-concept rdf:resource="#Entité_association"/>
+                    <precede1 rdf:resource="#Référence"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagrammes_de_collaborations">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagramme_d_états-transitions">
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                    <appartient-a-concept rdf:resource="#UML"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagramme_des_cas_d_utilisation">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Objet">
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <precede1 rdf:resource="#Classe"/>
+                    <precede1>
+                      <element_de_connaissance rdf:ID="Message">
+                        <appartient-a-concept rdf:resource="#UML"/>
+                        <precede-par1 rdf:resource="#Objet"/>
+                        <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                      </element_de_connaissance>
+                    </precede1>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1 rdf:resource="#Type_d_association"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagrammes_de_séquences">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1 rdf:resource="#Type_d_entité"/>
+                <enseigne1 rdf:resource="#Agrégation"/>
+                <adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >scena2</adresse>
+                <enseigne1 rdf:resource="#Cardinalités"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Polymorphisme">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1 rdf:resource="#Message"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagramme_d_activités">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagrammes_d_objets">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <precede2 rdf:resource="#Niveau_externe"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Diagrammes_de_composants">
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <contribue-a-enseigner rdf:resource="#Entité_association"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Spécialisation">
+                    <precede-par1 rdf:resource="#Classe"/>
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <contribue-a-enseigner rdf:resource="#UML"/>
+                <enseigne1>
+                  <element_de_connaissance rdf:ID="Généralisation">
+                    <precede-par1 rdf:resource="#Classe"/>
+                    <appartient-a-concept rdf:resource="#UML"/>
+                    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+                  </element_de_connaissance>
+                </enseigne1>
+                <enseigne1 rdf:resource="#Référence"/>
+              </scenario>
+            </est-enseigne-par>
+            <forme-de rdf:resource="#Diagramme_d_états-transitions"/>
+            <forme-de rdf:resource="#Message"/>
+            <forme-de rdf:resource="#Arttributs_de_classe"/>
+            <forme-de rdf:resource="#Methodes_de_classe"/>
+            <forme-de rdf:resource="#Classe"/>
+            <forme-de rdf:resource="#Polymorphisme"/>
+            <precede-par rdf:resource="#Entité_association"/>
+            <forme-de rdf:resource="#Héritage"/>
+            <forme-de rdf:resource="#Diagramme_d_activités"/>
+            <forme-de rdf:resource="#Diagramme_des_cas_d_utilisation"/>
+            <forme-de rdf:resource="#Diagrammes_de_collaborations"/>
+            <forme-de rdf:resource="#Diagrammes_d_objets"/>
+            <forme-de rdf:resource="#Diagrammes_de_composants"/>
+            <forme-de rdf:resource="#Objet"/>
+            <forme-de rdf:resource="#Diagrammes_de_classes"/>
+            <forme-de rdf:resource="#Diagrammes_de_séquences"/>
+            <forme-de rdf:resource="#Agrégation"/>
+            <forme-de rdf:resource="#Spécialisation"/>
+            <forme-de rdf:resource="#Généralisation"/>
+          </concept>
+        </appartient-a-concept>
+        <precede1 rdf:resource="#Héritage"/>
+        <precede-par1 rdf:resource="#Objet"/>
+        <precede1 rdf:resource="#Agrégation"/>
+        <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+        <precede1 rdf:resource="#Spécialisation"/>
+        <precede1 rdf:resource="#Généralisation"/>
+      </element_de_connaissance>
+    </precede-par1>
+    <appartient-a-scenario rdf:resource="#Niveau_conceptuel"/>
+    <appartient-a-concept rdf:resource="#UML"/>
+  </element_de_connaissance>
+  <element_de_connaissance rdf:ID="instruction_tant_que">
+    <appartient-a-scenario>
+      <scenario rdf:ID="Instructions">
+        <enseigne1>
+          <element_de_connaissance rdf:ID="instruction_conditionnelle_simple">
+            <appartient-a-scenario rdf:resource="#Instructions"/>
+            <precede1>
+              <element_de_connaissance rdf:ID="instruction_conditionnelle_complete">
+                <appartient-a-concept>
+                  <concept rdf:ID="Instructions_conditionnelle">
+                    <precede-par>
+                      <concept rdf:ID="Instruction_simple">
+                        <precede>
+                          <concept rdf:ID="Instructions_de_répétition">
+                            <forme-de rdf:resource="#instruction_tant_que"/>
+                            <precede-par rdf:resource="#Instructions_conditionnelle"/>
+                            <precede-par rdf:resource="#Instruction_simple"/>
+                            <est-enseigne-par rdf:resource="#Instructions"/>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="instruction_pour">
+                                <appartient-a-scenario rdf:resource="#Instructions"/>
+                                <appartient-a-concept rdf:resource="#Instructions_de_répétition"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="instruction_répéter_jusqu_à">
+                                <appartient-a-scenario rdf:resource="#Instructions"/>
+                                <appartient-a-concept rdf:resource="#Instructions_de_répétition"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                          </concept>
+                        </precede>
+                        <est-enseigne-par rdf:resource="#Instructions"/>
+                        <precede rdf:resource="#Instructions_conditionnelle"/>
+                        <forme-de>
+                          <element_de_connaissance rdf:ID="instruction_d_affectation">
+                            <appartient-a-concept rdf:resource="#Instruction_simple"/>
+                            <appartient-a-scenario rdf:resource="#Instructions"/>
+                          </element_de_connaissance>
+                        </forme-de>
+                      </concept>
+                    </precede-par>
+                    <forme-de rdf:resource="#instruction_conditionnelle_complete"/>
+                    <forme-de rdf:resource="#instruction_conditionnelle_simple"/>
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="instruction_a_multiple_choix">
+                        <appartient-a-scenario rdf:resource="#Instructions"/>
+                        <precede-par1 rdf:resource="#instruction_conditionnelle_complete"/>
+                        <appartient-a-concept rdf:resource="#Instructions_conditionnelle"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                    <est-enseigne-par rdf:resource="#Instructions"/>
+                    <precede rdf:resource="#Instructions_de_répétition"/>
+                  </concept>
+                </appartient-a-concept>
+                <precede-par1 rdf:resource="#instruction_conditionnelle_simple"/>
+                <precede1 rdf:resource="#instruction_a_multiple_choix"/>
+                <appartient-a-scenario rdf:resource="#Instructions"/>
+              </element_de_connaissance>
+            </precede1>
+            <appartient-a-concept rdf:resource="#Instructions_conditionnelle"/>
+          </element_de_connaissance>
+        </enseigne1>
+        <enseigne1 rdf:resource="#instruction_conditionnelle_complete"/>
+        <adresse rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >scena1</adresse>
+        <enseigne1>
+          <element_de_connaissance rdf:ID="instruction_d_écriture">
+            <appartient-a-concept>
+              <concept rdf:ID="Instructions_d_entrée_sortie">
+                <est-enseigne-par rdf:resource="#Instructions"/>
+                <forme-de rdf:resource="#instruction_d_écriture"/>
+                <forme-de>
+                  <element_de_connaissance rdf:ID="instruction_de_lecture">
+                    <precede-par1 rdf:resource="#instruction_d_écriture"/>
+                    <appartient-a-scenario rdf:resource="#Instructions"/>
+                    <appartient-a-concept rdf:resource="#Instructions_d_entrée_sortie"/>
+                  </element_de_connaissance>
+                </forme-de>
+              </concept>
+            </appartient-a-concept>
+            <appartient-a-scenario rdf:resource="#Instructions"/>
+            <precede1 rdf:resource="#instruction_de_lecture"/>
+          </element_de_connaissance>
+        </enseigne1>
+        <enseigne1 rdf:resource="#instruction_répéter_jusqu_à"/>
+        <contribue-a-enseigner rdf:resource="#Instruction_simple"/>
+        <contribue-a-enseigner rdf:resource="#Instructions_conditionnelle"/>
+        <enseigne1 rdf:resource="#instruction_pour"/>
+        <precede-par2>
+          <scenario rdf:ID="Les_types_de_base">
+            <enseigne1>
+              <element_de_connaissance rdf:ID="ensemble_de_valeurs_de_caractères">
+                <appartient-a-concept>
+                  <concept rdf:ID="Les_caractères">
+                    <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                    <forme-de rdf:resource="#ensemble_de_valeurs_de_caractères"/>
+                    <precede>
+                      <concept rdf:ID="Les_enregistrements">
+                        <precede-par>
+                          <concept rdf:ID="Les_tableaux">
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="les_opérations_sur_les_tableaux">
+                                <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                <appartient-a-concept rdf:resource="#Les_tableaux"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                            <precede-par>
+                              <concept rdf:ID="Les_entiers">
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="opérateurs_sur_les_entiers">
+                                    <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                    <appartient-a-concept rdf:resource="#Les_entiers"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <precede>
+                                  <concept rdf:ID="Les_types_intervalles">
+                                    <precede-par>
+                                      <concept rdf:ID="Les_booléens">
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="fonctions_prédéfinies_sur_les_booléens">
+                                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                            <appartient-a-concept rdf:resource="#Les_booléens"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <precede rdf:resource="#Les_types_intervalles"/>
+                                        <precede rdf:resource="#Les_tableaux"/>
+                                        <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                                        <precede rdf:resource="#Les_enregistrements"/>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="opérateurs_sur_les_booléens">
+                                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                            <appartient-a-concept rdf:resource="#Les_booléens"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="ensemble_de_valeurs_des_booléens">
+                                            <appartient-a-concept rdf:resource="#Les_booléens"/>
+                                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                      </concept>
+                                    </precede-par>
+                                    <precede-par rdf:resource="#Les_caractères"/>
+                                    <precede-par>
+                                      <concept rdf:ID="Les_types_énumérés">
+                                        <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                                        <precede rdf:resource="#Les_types_intervalles"/>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="opérateurs_sur_les_types_énumérés">
+                                            <appartient-a-concept rdf:resource="#Les_types_énumérés"/>
+                                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <precede rdf:resource="#Les_enregistrements"/>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="ensemble_de_valeurs_des_types_énumérés">
+                                            <appartient-a-concept rdf:resource="#Les_types_énumérés"/>
+                                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                        <forme-de>
+                                          <element_de_connaissance rdf:ID="fonctions_prédéfinies_sur_les_types_énumérés">
+                                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                            <appartient-a-concept rdf:resource="#Les_types_énumérés"/>
+                                          </element_de_connaissance>
+                                        </forme-de>
+                                      </concept>
+                                    </precede-par>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="ensemble_de_valeurs_des_types_intervalles">
+                                        <appartient-a-concept rdf:resource="#Les_types_intervalles"/>
+                                        <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <precede rdf:resource="#Les_enregistrements"/>
+                                    <precede-par rdf:resource="#Les_entiers"/>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="fonctions_prédéfinies_sur_les_types_intervalles">
+                                        <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                        <appartient-a-concept rdf:resource="#Les_types_intervalles"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="opérateurs_sur_les_types_intervalles">
+                                        <appartient-a-concept rdf:resource="#Les_types_intervalles"/>
+                                        <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                  </concept>
+                                </precede>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="ensemble_de_valeurs_d_entiers">
+                                    <appartient-a-concept rdf:resource="#Les_entiers"/>
+                                    <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                                <precede rdf:resource="#Les_tableaux"/>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="fonctions_prédéfinies_sur_les_entiers">
+                                    <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                    <appartient-a-concept rdf:resource="#Les_entiers"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                              </concept>
+                            </precede-par>
+                            <precede-par>
+                              <concept rdf:ID="Les_réels">
+                                <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="ensemble_de_valeurs_des_réels">
+                                    <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                    <appartient-a-concept rdf:resource="#Les_réels"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="fonctions_prédéfinies_sur_les_réels">
+                                    <appartient-a-concept rdf:resource="#Les_réels"/>
+                                    <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <precede rdf:resource="#Les_enregistrements"/>
+                                <precede rdf:resource="#Les_tableaux"/>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="opérateurs_sur_les_réels">
+                                    <appartient-a-concept rdf:resource="#Les_réels"/>
+                                    <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                              </concept>
+                            </precede-par>
+                            <precede-par rdf:resource="#Les_booléens"/>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="l_indice">
+                                <appartient-a-concept rdf:resource="#Les_tableaux"/>
+                                <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <precede rdf:resource="#Les_enregistrements"/>
+                            <precede-par rdf:resource="#Les_caractères"/>
+                          </concept>
+                        </precede-par>
+                        <forme-de>
+                          <element_de_connaissance rdf:ID="champ">
+                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                            <appartient-a-concept rdf:resource="#Les_enregistrements"/>
+                          </element_de_connaissance>
+                        </forme-de>
+                        <precede-par rdf:resource="#Les_réels"/>
+                        <precede-par rdf:resource="#Les_types_intervalles"/>
+                        <precede-par rdf:resource="#Les_types_énumérés"/>
+                        <precede-par rdf:resource="#Les_caractères"/>
+                        <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                        <forme-de>
+                          <element_de_connaissance rdf:ID="champs_variants">
+                            <appartient-a-concept rdf:resource="#Les_enregistrements"/>
+                            <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                          </element_de_connaissance>
+                        </forme-de>
+                        <precede-par rdf:resource="#Les_booléens"/>
+                      </concept>
+                    </precede>
+                    <precede rdf:resource="#Les_types_intervalles"/>
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="opérateurs_sur_les_caractères">
+                        <appartient-a-concept rdf:resource="#Les_caractères"/>
+                        <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                    <precede rdf:resource="#Les_tableaux"/>
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="fonctions_prédéfinies_sur_les_caractères">
+                        <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                        <appartient-a-concept rdf:resource="#Les_caractères"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                  </concept>
+                </appartient-a-concept>
+                <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+              </element_de_connaissance>
+            </enseigne1>
+            <contribue-a-enseigner rdf:resource="#Les_types_énumérés"/>
+            <enseigne1 rdf:resource="#opérateurs_sur_les_types_intervalles"/>
+            <contribue-a-enseigner rdf:resource="#Les_caractères"/>
+            <enseigne1>
+              <element_de_connaissance rdf:ID="opérateurs_sur_les_ensembles">
+                <appartient-a-concept>
+                  <concept rdf:ID="Les_ensembles">
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="ordre_dans_les_ensembles">
+                        <appartient-a-concept rdf:resource="#Les_ensembles"/>
+                        <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                    <est-enseigne-par rdf:resource="#Les_types_de_base"/>
+                    <forme-de rdf:resource="#opérateurs_sur_les_ensembles"/>
+                  </concept>
+                </appartient-a-concept>
+                <appartient-a-scenario rdf:resource="#Les_types_de_base"/>
+              </element_de_connaissance>
+            </enseigne1>
+            <enseigne1 rdf:resource="#ensemble_de_valeurs_d_entiers"/>
+            <enseigne1 rdf:resource="#fonctions_prédéfinies_sur_les_caractères"/>
+            <enseigne1 rdf:resource="#ordre_dans_les_ensembles"/>
+            <enseigne1 rdf:resource="#opérateurs_sur_les_réels"/>
+            <precede2>
+              <scenario rdf:ID="Sous-algorithme">
+                <contribue-a-enseigner>
+                  <concept rdf:ID="Passage_de_paramètres">
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="paramètres">
+                        <precede1>
+                          <element_de_connaissance rdf:ID="paramètres_formels">
+                            <appartient-a-concept rdf:resource="#Passage_de_paramètres"/>
+                            <precede-par1 rdf:resource="#paramètres"/>
+                            <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                          </element_de_connaissance>
+                        </precede1>
+                        <appartient-a-concept rdf:resource="#Passage_de_paramètres"/>
+                        <precede1>
+                          <element_de_connaissance rdf:ID="paramètres_effectifs">
+                            <appartient-a-concept rdf:resource="#Passage_de_paramètres"/>
+                            <precede-par1 rdf:resource="#paramètres"/>
+                            <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                          </element_de_connaissance>
+                        </precede1>
+                        <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                    <precede-par>
+                      <concept rdf:ID="Les_fonctions">
+                        <precede>
+                          <concept rdf:ID="La_récursivité">
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="procédures_récursives">
+                                <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                                <appartient-a-concept rdf:resource="#La_récursivité"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="fonctions_récursives">
+                                <appartient-a-concept rdf:resource="#La_récursivité"/>
+                                <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <precede-par>
+                              <concept rdf:ID="Les_procédures">
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="appel_de_procédure">
+                                    <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                                    <appartient-a-concept rdf:resource="#Les_procédures"/>
+                                    <precede-par1>
+                                      <element_de_connaissance rdf:ID="déclaration_d_une_procédure">
+                                        <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                                        <appartient-a-concept rdf:resource="#Les_procédures"/>
+                                        <precede1 rdf:resource="#appel_de_procédure"/>
+                                      </element_de_connaissance>
+                                    </precede-par1>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <precede rdf:resource="#Passage_de_paramètres"/>
+                                <forme-de rdf:resource="#déclaration_d_une_procédure"/>
+                                <precede rdf:resource="#La_récursivité"/>
+                                <est-enseigne-par rdf:resource="#Sous-algorithme"/>
+                                <precede>
+                                  <concept rdf:ID="La_portée_et_la_visibilité_des_identificateurs">
+                                    <forme-de>
+                                      <element_de_connaissance rdf:ID="identificateurs_globaux">
+                                        <precede-par1>
+                                          <element_de_connaissance rdf:ID="identificateurs">
+                                            <appartient-a-concept rdf:resource="#La_portée_et_la_visibilité_des_identificateurs"/>
+                                            <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                                            <precede1 rdf:resource="#identificateurs_globaux"/>
+                                            <precede1>
+                                              <element_de_connaissance rdf:ID="identificateur_locaux">
+                                                <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                                                <appartient-a-concept rdf:resource="#La_portée_et_la_visibilité_des_identificateurs"/>
+                                                <precede-par1 rdf:resource="#identificateurs"/>
+                                              </element_de_connaissance>
+                                            </precede1>
+                                          </element_de_connaissance>
+                                        </precede-par1>
+                                        <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                                        <appartient-a-concept rdf:resource="#La_portée_et_la_visibilité_des_identificateurs"/>
+                                      </element_de_connaissance>
+                                    </forme-de>
+                                    <precede-par rdf:resource="#Les_fonctions"/>
+                                    <forme-de rdf:resource="#identificateur_locaux"/>
+                                    <est-enseigne-par rdf:resource="#Sous-algorithme"/>
+                                    <forme-de rdf:resource="#identificateurs"/>
+                                    <precede-par rdf:resource="#Les_procédures"/>
+                                  </concept>
+                                </precede>
+                              </concept>
+                            </precede-par>
+                            <est-enseigne-par rdf:resource="#Sous-algorithme"/>
+                            <precede-par rdf:resource="#Les_fonctions"/>
+                          </concept>
+                        </precede>
+                        <forme-de>
+                          <element_de_connaissance rdf:ID="appel_de_fonction">
+                            <appartient-a-concept rdf:resource="#Les_fonctions"/>
+                            <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                            <precede-par1>
+                              <element_de_connaissance rdf:ID="déclaration_d_une_fonction">
+                                <precede1 rdf:resource="#appel_de_fonction"/>
+                                <appartient-a-concept rdf:resource="#Les_fonctions"/>
+                                <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                              </element_de_connaissance>
+                            </precede-par1>
+                          </element_de_connaissance>
+                        </forme-de>
+                        <forme-de rdf:resource="#déclaration_d_une_fonction"/>
+                        <precede rdf:resource="#La_portée_et_la_visibilité_des_identificateurs"/>
+                        <est-enseigne-par rdf:resource="#Sous-algorithme"/>
+                        <precede rdf:resource="#Passage_de_paramètres"/>
+                      </concept>
+                    </precede-par>
+                    <forme-de rdf:resource="#paramètres_formels"/>
+                    <forme-de rdf:resource="#paramètres_effectifs"/>
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="Passage_de_paramètres_par_valeur">
+                        <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                        <appartient-a-concept rdf:resource="#Passage_de_paramètres"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                    <forme-de>
+                      <element_de_connaissance rdf:ID="Passage_de_paramètres_par_adresse">
+                        <appartient-a-concept rdf:resource="#Passage_de_paramètres"/>
+                        <appartient-a-scenario rdf:resource="#Sous-algorithme"/>
+                      </element_de_connaissance>
+                    </forme-de>
+                    <precede-par rdf:resource="#Les_procédures"/>
+                    <est-enseigne-par rdf:resource="#Sous-algorithme"/>
+                  </concept>
+                </contribue-a-enseigner>
+                <enseigne1 rdf:resource="#appel_de_fonction"/>
+                <enseigne1 rdf:resource="#Passage_de_paramètres_par_valeur"/>
+                <precede-par2 rdf:resource="#Les_types_de_base"/>
+                <enseigne1 rdf:resource="#identificateurs_globaux"/>
+                <enseigne1 rdf:resource="#paramètres_formels"/>
+                <enseigne1 rdf:resource="#procédures_récursives"/>
+                <enseigne1 rdf:resource="#Passage_de_paramètres_par_adresse"/>
+                <enseigne1 rdf:resource="#paramètres_effectifs"/>
+                <enseigne1 rdf:resource="#déclaration_d_une_procédure"/>
+                <contribue-a-enseigner rdf:resource="#Les_procédures"/>
+                <enseigne1 rdf:resource="#identificateur_locaux"/>
+                <contribue-a-enseigner rdf:resource="#La_récursivité"/>
+                <precede-par2>
+                  <scenario rdf:ID="Structure_d_un_algorithme">
+                    <enseigne1>
+                      <element_de_connaissance rdf:ID="Variable">
+                        <appartient-a-concept>
+                          <concept rdf:ID="Déclarations">
+                            <forme-de rdf:resource="#Variable"/>
+                            <est-enseigne-par rdf:resource="#Structure_d_un_algorithme"/>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="Type">
+                                <appartient-a-concept rdf:resource="#Déclarations"/>
+                                <precede rdf:resource="#Structure_d_un_algorithme"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <forme-de>
+                              <element_de_connaissance rdf:ID="Constante">
+                                <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                <appartient-a-concept rdf:resource="#Déclarations"/>
+                              </element_de_connaissance>
+                            </forme-de>
+                            <precede>
+                              <concept rdf:ID="Corps_du_l_algorithme">
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="Opérateur">
+                                    <precede-par1>
+                                      <element_de_connaissance rdf:ID="Expression">
+                                        <precede-par1>
+                                          <element_de_connaissance rdf:ID="Instruction">
+                                            <precede-par1 rdf:resource="#Expression"/>
+                                            <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                            <precede1 rdf:resource="#Expression"/>
+                                            <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                          </element_de_connaissance>
+                                        </precede-par1>
+                                        <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                        <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                        <precede1 rdf:resource="#Opérateur"/>
+                                        <precede1>
+                                          <element_de_connaissance rdf:ID="Opérande">
+                                            <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                            <precede-par1 rdf:resource="#Expression"/>
+                                            <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                          </element_de_connaissance>
+                                        </precede1>
+                                        <precede1 rdf:resource="#Instruction"/>
+                                      </element_de_connaissance>
+                                    </precede-par1>
+                                    <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                    <precede1>
+                                      <element_de_connaissance rdf:ID="Opérateurs_arithmitiques">
+                                        <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                        <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                        <precede-par1 rdf:resource="#Opérateur"/>
+                                      </element_de_connaissance>
+                                    </precede1>
+                                    <precede1>
+                                      <element_de_connaissance rdf:ID="Opérateurs_Unaire">
+                                        <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                        <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                        <precede-par1 rdf:resource="#Opérateur"/>
+                                      </element_de_connaissance>
+                                    </precede1>
+                                    <precede1>
+                                      <element_de_connaissance rdf:ID="Opérateurs_binaires">
+                                        <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                        <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                        <precede-par1 rdf:resource="#Opérateur"/>
+                                      </element_de_connaissance>
+                                    </precede1>
+                                    <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                    <precede1>
+                                      <element_de_connaissance rdf:ID="Opérateurs_logiques">
+                                        <precede-par1 rdf:resource="#Opérateur"/>
+                                        <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                                        <appartient-a-concept rdf:resource="#Corps_du_l_algorithme"/>
+                                      </element_de_connaissance>
+                                    </precede1>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <forme-de rdf:resource="#Expression"/>
+                                <forme-de rdf:resource="#Opérateurs_logiques"/>
+                                <forme-de rdf:resource="#Opérateurs_Unaire"/>
+                                <forme-de rdf:resource="#Opérateurs_arithmitiques"/>
+                                <est-enseigne-par rdf:resource="#Structure_d_un_algorithme"/>
+                                <precede-par rdf:resource="#Déclarations"/>
+                                <forme-de rdf:resource="#Opérande"/>
+                                <forme-de rdf:resource="#Opérateurs_binaires"/>
+                                <forme-de rdf:resource="#Instruction"/>
+                              </concept>
+                            </precede>
+                          </concept>
+                        </appartient-a-concept>
+                        <appartient-a-scenario rdf:resource="#Structure_d_un_algorithme"/>
+                      </element_de_connaissance>
+                    </enseigne1>
+                    <enseigne1 rdf:resource="#Opérande"/>
+                    <precede2 rdf:resource="#Les_types_de_base"/>
+                    <enseigne1 rdf:resource="#Opérateurs_logiques"/>
+                    <precede2 rdf:resource="#Instructions"/>
+                    <enseigne1 rdf:resource="#Opérateurs_Unaire"/>
+                    <enseigne1 rdf:resource="#Expression"/>
+                    <contribue-a-enseigner rdf:resource="#Corps_du_l_algorithme"/>
+                    <enseigne1 rdf:resource="#opérateur"/>
+                    <enseigne1 rdf:resource="#Type"/>
+                    <contribue-a-enseigner rdf:resource="#Déclarations"/>
+                    <precede2>
+                      <scenario rdf:ID="Les_Fichiers">
+                        <enseigne1>
+                          <element_de_connaissance rdf:ID="lecture_dans_un_fichier_de_type_quelconque">
+                            <appartient-a-concept>
+                              <concept rdf:ID="Fichier_de_type_quelconque">
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="écriture_dans_un_fichier_de_type_quelconque">
+                                    <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                    <appartient-a-concept rdf:resource="#Fichier_de_type_quelconque"/>
+                                    <precede-par1>
+                                      <element_de_connaissance rdf:ID="initialisation_d_un_fichier_de_type_quelconque">
+                                        <precede1 rdf:resource="#lecture_dans_un_fichier_de_type_quelconque"/>
+                                        <appartient-a-concept rdf:resource="#Fichier_de_type_quelconque"/>
+                                        <precede1 rdf:resource="#écriture_dans_un_fichier_de_type_quelconque"/>
+                                        <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                      </element_de_connaissance>
+                                    </precede-par1>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <est-enseigne-par rdf:resource="#Les_Fichiers"/>
+                                <forme-de rdf:resource="#initialisation_d_un_fichier_de_type_quelconque"/>
+                                <forme-de rdf:resource="#lecture_dans_un_fichier_de_type_quelconque"/>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="détection_de_la_fin_de_fichier_de_type_quelconque">
+                                    <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                    <appartient-a-concept rdf:resource="#Fichier_de_type_quelconque"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                              </concept>
+                            </appartient-a-concept>
+                            <precede-par1 rdf:resource="#initialisation_d_un_fichier_de_type_quelconque"/>
+                            <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                          </element_de_connaissance>
+                        </enseigne1>
+                        <enseigne1>
+                          <element_de_connaissance rdf:ID="lecture_dans_un_fichier_texte">
+                            <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                            <appartient-a-concept>
+                              <concept rdf:ID="Fichier_texte">
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="écriture_dans_un_fichier_texte">
+                                    <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                    <appartient-a-concept rdf:resource="#Fichier_texte"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="initialisation_d_un_fichier_texte">
+                                    <precede1 rdf:resource="#lecture_dans_un_fichier_texte"/>
+                                    <appartient-a-concept rdf:resource="#Fichier_texte"/>
+                                    <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="détection_de_la_fin_de_fichier_texte">
+                                    <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                    <appartient-a-concept rdf:resource="#Fichier_texte"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <forme-de>
+                                  <element_de_connaissance rdf:ID="détection_de_la_fin_d_une_ligne">
+                                    <appartient-a-scenario rdf:resource="#Les_Fichiers"/>
+                                    <appartient-a-concept rdf:resource="#Fichier_texte"/>
+                                  </element_de_connaissance>
+                                </forme-de>
+                                <est-enseigne-par rdf:resource="#Les_Fichiers"/>
+                                <forme-de rdf:resource="#lecture_dans_un_fichier_texte"/>
+                              </concept>
+                            </appartient-a-concept>
+                            <precede-par1 rdf:resource="#initialisation_d_un_fichier_texte"/>
+                          </element_de_connaissance>
+                        </enseigne1>
+                        <contribue-a-enseigner rdf:resource="#Fichier_de_type_quelconque"/>
+                        <contribue-a-enseigner rdf:resource="#Fichier_texte"/>
+                        <enseigne1 rdf:resource="#initialisation_d_un_fichier_de_type_quelconque"/>
+                        <precede-par2 rdf:resource="#Structure_d_un_algorithme"/>
+                        <enseigne1 rdf:resource="#écriture_dans_un_fichier_texte"/>
+                        <enseigne1 rdf:resource="#initialisation_d_un_fichier_texte"/>
+                        <enseigne1 rdf:resource="#détection_de_la_fin_d_une_ligne"/>
+                        <precede-par2 rdf:resource="#Les_types_de_base"/>
+                        <enseigne1 rdf:resource="#détection_de_la_fin_de_fichier_de_type_quelconque"/>
+                        <enseigne1 rdf:resource="#détection_de_la_fin_de_fichier_texte"/>
+                        <enseigne1 rdf:resource="#écriture_dans_un_fichier_de_type_quelconque"/>
+                      </scenario>
+                    </precede2>
+                    <enseigne1 rdf:resource="#Constante"/>
+                    <enseigne1 rdf:resource="#Instruction"/>
+                    <enseigne1 rdf:resource="#Opérateurs_arithmitiques"/>
+                    <enseigne1 rdf:resource="#Opérateurs_binaires"/>
+                    <precede2 rdf:resource="#Sous-algorithme"/>
+                  </scenario>
+                </precede-par2>
+                <enseigne1 rdf:resource="#appel_de_procédure"/>
+                <contribue-a-enseigner rdf:resource="#Les_fonctions"/>
+                <enseigne1 rdf:resource="#déclaration_d_une_fonction"/>
+                <enseigne1 rdf:resource="#fonctions_récursives"/>
+                <enseigne1 rdf:resource="#identificateurs"/>
+                <enseigne1 rdf:resource="#paramètres"/>
+                <contribue-a-enseigner rdf:resource="#La_portée_et_la_visibilité_des_identificateurs"/>
+              </scenario>
+            </precede2>
+            <enseigne1 rdf:resource="#l_indice"/>
+            <enseigne1 rdf:resource="#les_opérations_sur_les_tableaux"/>
+            <precede-par2 rdf:resource="#Structure_d_un_algorithme"/>
+            <enseigne1 rdf:resource="#champ"/>
+            <enseigne1 rdf:resource="#fonctions_prédéfinies_sur_les_types_énumérés"/>
+            <contribue-a-enseigner rdf:resource="#Les_booléens"/>
+            <precede2 rdf:resource="#Instructions"/>
+            <contribue-a-enseigner rdf:resource="#Les_types_intervalles"/>
+            <contribue-a-enseigner rdf:resource="#Les_enregistrements"/>
+            <enseigne1 rdf:resource="#ensemble_de_valeurs_des_types_intervalles"/>
+            <enseigne1 rdf:resource="#opérateurs_sur_les_types_énumérés"/>
+            <contribue-a-enseigner rdf:resource="#Les_entiers"/>
+            <enseigne1 rdf:resource="#ensemble_de_valeurs_des_réels"/>
+            <enseigne1 rdf:resource="#ensemble_de_valeurs_des_types_énumérés"/>
+            <enseigne1 rdf:resource="#fonctions_prédéfinies_sur_les_booléens"/>
+            <enseigne1 rdf:resource="#fonctions_prédéfinies_sur_les_réels"/>
+            <contribue-a-enseigner rdf:resource="#Les_tableaux"/>
+            <enseigne1 rdf:resource="#ensemble_de_valeurs_des_booléens"/>
+            <enseigne1 rdf:resource="#opérateurs_sur_les_entiers"/>
+            <enseigne1 rdf:resource="#champs_variants"/>
+            <enseigne1 rdf:resource="#opérateurs_sur_les_booléens"/>
+            <enseigne1 rdf:resource="#fonctions_prédéfinies_sur_les_types_intervalles"/>
+            <enseigne1 rdf:resource="#opérateurs_sur_les_caractères"/>
+            <contribue-a-enseigner rdf:resource="#Les_réels"/>
+            <precede2>
+              <scenario rdf:ID="Structures_de_données_élémentaires">
+                <contribue-a-enseigner>
+                  <concept rdf:ID="Les_listes_inversées">
+                    <est-enseigne-par rdf:resource="#Structures_de_données_élémentaires"/>
+                    <precede-par>
+                      <concept rdf:ID="Les_listes">
+                        <precede>
+                          <concept rdf:ID="Les_multi-listes">
+                            <precede-par rdf:resource="#Les_listes"/>
+                            <est-enseigne-par rdf:resource="#Structures_de_données_élémentaires"/>
+                          </concept>
+                        </precede>
+                        <precede rdf:resource="#Les_listes_inversées"/>
+                        <precede>
+                          <concept rdf:ID="Les_listes_circulaires">
+                            <est-enseigne-par rdf:resource="#Structures_de_données_élémentaires"/>
+                            <precede-par rdf:resource="#Les_listes"/>
+                          </concept>
+                        </precede>
+                        <est-enseigne-par rdf:resource="#Structures_de_données_élémentaires"/>
+                      </concept>
+                    </precede-par>
+                  </concept>
+                </contribue-a-enseigner>
+                <precede2>
+                  <scenario rdf:ID="Structures_de_données_avancées">
+                    <precede-par2 rdf:resource="#Structures_de_données_élémentaires"/>
+                  </scenario>
+                </precede2>
+                <contribue-a-enseigner>
+                  <concept rdf:ID="Les_files">
+                    <est-enseigne-par rdf:resource="#Structures_de_données_élémentaires"/>
+                  </concept>
+                </contribue-a-enseigner>
+                <contribue-a-enseigner>
+                  <concept rdf:ID="Les_piles">
+                    <est-enseigne-par rdf:resource="#Structures_de_données_élémentaires"/>
+                  </concept>
+                </contribue-a-enseigner>
+                <contribue-a-enseigner rdf:resource="#Les_listes_circulaires"/>
+                <precede-par2 rdf:resource="#Les_types_de_base"/>
+                <contribue-a-enseigner rdf:resource="#Les_listes"/>
+                <contribue-a-enseigner rdf:resource="#Les_multi-listes"/>
+              </scenario>
+            </precede2>
+            <enseigne1 rdf:resource="#fonctions_prédéfinies_sur_les_entiers"/>
+            <precede2 rdf:resource="#Les_Fichiers"/>
+            <contribue-a-enseigner rdf:resource="#Les_ensembles"/>
+          </scenario>
+        </precede-par2>
+        <enseigne1 rdf:resource="#instruction_d_affectation"/>
+        <enseigne1 rdf:resource="#instruction_a_multiple_choix"/>
+        <enseigne1 rdf:resource="#instruction_tant_que"/>
+        <contribue-a-enseigner rdf:resource="#Instructions_de_répétition"/>
+        <contribue-a-enseigner rdf:resource="#Instructions_d_entrée_sortie"/>
+        <enseigne1 rdf:resource="#instruction_de_lecture"/>
+        <precede-par2 rdf:resource="#Structure_d_un_algorithme"/>
+      </scenario>
+    </appartient-a-scenario>
+    <appartient-a-concept rdf:resource="#Instructions_de_répétition"/>
+  </element_de_connaissance>
+  <Page-web rdf:ID="document8">
+    <adresse-doc>http://www.google.fr</adresse-doc>
+    <num>7</num>
+  </Page-web>
+  <scenario rdf:ID="système_de_gestion_des_fichiers">
+    <precede-par2>
+      <scenario rdf:ID="gestion_des_entrées_sorties_logiques">
+        <precede2 rdf:resource="#système_de_gestion_des_fichiers"/>
+      </scenario>
+    </precede-par2>
+  </scenario>
+  <didacticiel rdf:ID="Algorithmique">
+    <constitue-de rdf:resource="#Instructions"/>
+    <constitue-de rdf:resource="#Les_types_de_base"/>
+    <constitue-de rdf:resource="#Structures_de_données_avancées"/>
+    <constitue-de rdf:resource="#Sous-algorithme"/>
+    <constitue-de rdf:resource="#Structures_de_données_élémentaires"/>
+    <collection-doc>
+      <document-pendere>
+        <poid-concept>0.6</poid-concept>
+        <doc rdf:resource="#document8"/>
+      </document-pendere>
+    </collection-doc>
+    <constitue-de rdf:resource="#Structure_d_un_algorithme"/>
+    <constitue-de rdf:resource="#Les_Fichiers"/>
+  </didacticiel>
+  <scenario rdf:ID="vie_d_un_programme"/>
+  <scenario rdf:ID="gestion_des_entrées_sorties_physiques"/>
+  <didacticiel rdf:ID="Bases_de_données">
+    <constitue-de rdf:resource="#Niveau_interne"/>
+    <constitue-de rdf:resource="#Niveau_externe"/>
+    <constitue-de rdf:resource="#Sgbd_objet"/>
+    <constitue-de rdf:resource="#Sgbd_relationnel"/>
+    <constitue-de rdf:resource="#SQL"/>
+    <constitue-de rdf:resource="#Niveau_conceptuel"/>
+  </didacticiel>
+  <scenario rdf:ID="Conception_des_systèmes_d_exploitation">
+    <precede-par2>
+      <scenario rdf:ID="notions_de_base_du_système_d_exploitation">
+        <precede2 rdf:resource="#Conception_des_systèmes_d_exploitation"/>
+      </scenario>
+    </precede-par2>
+  </scenario>
+  <didacticiel rdf:ID="Téléinformatique"/>
+  <didacticiel rdf:ID="Système_d_exploitation">
+    <constitue-de rdf:resource="#vie_d_un_programme"/>
+    <constitue-de>
+      <scenario rdf:ID="gestion_de_la_mémoire"/>
+    </constitue-de>
+    <constitue-de rdf:resource="#Conception_des_systèmes_d_exploitation"/>
+    <constitue-de rdf:resource="#système_de_gestion_des_fichiers"/>
+    <constitue-de rdf:resource="#gestion_des_entrées_sorties_physiques"/>
+    <constitue-de rdf:resource="#notions_de_base_du_système_d_exploitation"/>
+    <constitue-de rdf:resource="#gestion_des_entrées_sorties_logiques"/>
+  </didacticiel>
+</rdf:RDF>

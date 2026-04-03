@@ -1,0 +1,616 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./scena1_fichiers/filelist.xml">
+<link rel=Edit-Time-Data href="./scena1_fichiers/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title> Structure d’un algorithme</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Hammache </o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Hammache </o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>503</o:TotalTime>
+  <o:Created>2005-09-15T05:36:00Z</o:Created>
+  <o:LastSaved>2005-09-15T05:36:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>727</o:Words>
+  <o:Characters>4146</o:Characters>
+  <o:Lines>34</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>5091</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:HyphenationZone>21</w:HyphenationZone>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129023 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:#80FFFF;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0cm;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Unicode MS";}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Arial Unicode MS";
+	color:black;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1068"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white background="./scena1_fichiers/image001.gif" lang=FR
+link="#80ffff" vlink=purple style='tab-interval:35.4pt'>
+<!--[if gte mso 9]><xml>
+ <v:background id="_x0000_s1066" o:bwmode="white" o:targetscreensize="800,600">
+  <v:fill src="./scena1_fichiers/image001.gif" o:title="image001" type="frame"/>
+ </v:background></xml><![endif]-->
+
+<div class=Section1>
+
+<p style='margin-left:99.0pt'><b><span style='font-size:13.5pt;color:blue'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:23.25pt;
+ height:10.5pt'>
+ <v:imagedata src="./scena1_fichiers/image002.gif" o:href="file:///D:/Thèse_finale/image/boule_vert.GIF"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image002.gif" v:shapes="_x0000_i1025"><![endif]><u>Instructions</u></span></b></p>
+
+<p style='margin-left:144.0pt;line-height:150%;tab-stops:list 162.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1026"
+ type="#_x0000_t75" style='width:10.5pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image003.gif" o:title="boule_jaune"/>
+</v:shape><![endif]--><![if !vml]><img width=14 height=14
+src="./scena1_fichiers/image003.gif" alt="*" v:shapes="_x0000_i1026"><![endif]><span
+style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+yes"> </span>Instructions simples<span style="mso-spacerun: yes">     </span><o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1027"><![endif]><span
+style='mso-tab-count:1'>         </span><span style='color:blue'>Instruction
+d’affectation </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>L'instruction d'affectation est une façon de donner
+une valeur (ou une expression ) à une variable.<span style="mso-spacerun:
+yes">  </span>Elle est représentée graphiquement par une flèche.<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1056" style='position:absolute;left:0;text-align:left;flip:x y;
+ z-index:2;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="412.05pt,6.95pt" to="448.05pt,6.95pt" strokecolor="blue">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:548px;margin-top:3px;width:51px;
+height:14px'><img width=51 height=14 src="./scena1_fichiers/image005.gif"
+v:shapes="_x0000_s1056"></span><![endif]><!--[if gte vml 1]><v:line id="_x0000_s1055"
+ style='position:absolute;left:0;text-align:left;flip:x y;z-index:1;
+ mso-position-horizontal:absolute;mso-position-vertical:absolute' from="290.55pt,6.2pt"
+ to="326.55pt,6.2pt" strokecolor="blue">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:0;left:0px;margin-left:386px;margin-top:2px;width:51px;
+height:14px'><img width=51 height=14 src="./scena1_fichiers/image006.gif"
+v:shapes="_x0000_s1055"></span><![endif]><span style='font-family:Arial;
+color:red'>Exemples</span><span style='font-family:Arial'>&nbsp;: X<span
+style="mso-spacerun: yes">    </span><span style="mso-spacerun:
+yes">            </span>17&nbsp;<span style="mso-spacerun:
+yes">                 </span>X<span style="mso-spacerun: yes">              
+</span>y+5<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:black'>Dans le premier cas X va avoir la valeur
+17, dans le deuxième cas X va prendre la valeur de y plus 5.<o:p></o:p></span></p>
+
+<p style='margin-left:144.0pt;line-height:150%;tab-stops:list 162.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1028"
+ type="#_x0000_t75" style='width:10.5pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image003.gif" o:title="boule_jaune"/>
+</v:shape><![endif]--><![if !vml]><img width=14 height=14
+src="./scena1_fichiers/image003.gif" alt="*" v:shapes="_x0000_i1028"><![endif]><span
+style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+yes"> </span>Instructions conditionnelles <o:p></o:p></span></p>
+
+<p style='margin-left:144.0pt;line-height:150%;tab-stops:list 162.0pt'><span
+style='font-family:Arial;color:black'><span style="mso-spacerun: yes">       
+</span>Il existe deux types de tests&nbsp;:<o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1029"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1029"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction conditionnelle simple<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>La structure de l'instruction conditionnelle
+simple<span style="mso-spacerun: yes">  </span>se présente sous la
+forme&nbsp;:<span style="mso-spacerun: yes">  </span><span style='color:blue'>Si</span>
+expression <span style='color:blue'>Alors<span style="mso-spacerun:
+yes">                                                         </span></span><span
+style="mso-spacerun: yes"> </span>séquence d'instructions<span
+style="mso-spacerun:
+yes">                                                                   </span><span
+style="mso-spacerun: yes">   </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Finsi</span><span style='font-family:Arial'><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1058" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:3;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="259.05pt,27.95pt" to="295.05pt,27.95pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:2;left:0px;margin-left:344px;margin-top:31px;width:51px;
+height:14px'><img width=51 height=14 src="./scena1_fichiers/image007.gif"
+v:shapes="_x0000_s1058"></span><![endif]><span style='font-family:Arial;
+color:red'>Exemple&nbsp;:<span style="mso-spacerun: yes">  </span></span><span
+style='font-family:Arial;color:blue'>Si<span style="mso-spacerun: yes"> 
+</span></span><span style='font-family:Arial;color:black'>x &gt;= 10 </span><span
+style='font-family:Arial;color:blue'>Alors</span><span style='font-family:Arial;
+color:black'><span style="mso-spacerun:
+yes">                                                                   
+</span>résultat<span style="mso-spacerun: yes">               
+</span>admis<span style="mso-spacerun: yes">        </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Finsi<o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1030"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1030"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction conditionnelle complète<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>La structure de l'instruction conditionnelle
+simple<span style="mso-spacerun: yes">  </span>se présente sous la
+forme&nbsp;:<span style="mso-spacerun: yes">  </span><span style='color:blue'>Si</span>
+expression <span style='color:blue'>Alors</span><span style="mso-spacerun:
+yes">                                                           
+</span>première séquence d'instructions<span style="mso-spacerun:
+yes">                                                                           
+</span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Sinon </span><span style='font-family:
+Arial'>deuxième séquence d'instructions <span style="mso-spacerun:
+yes">                                             </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Finsi<span style="mso-spacerun:
+yes">          </span></span><span style='font-family:Arial'><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:red'>Exemple&nbsp;: <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Si<span style="mso-spacerun: yes"> 
+</span></span><span style='font-family:Arial;color:black'>x &gt;= 10 </span><span
+style='font-family:Arial;color:blue'>Alors</span><span style='font-family:Arial;
+color:black'> <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1059" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:4;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="260.55pt,6.95pt" to="296.55pt,6.95pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:3;left:0px;margin-left:346px;margin-top:3px;width:51px;
+height:14px'><img width=51 height=14 src="./scena1_fichiers/image008.gif"
+v:shapes="_x0000_s1059"></span><![endif]><span style='font-family:Arial;
+color:black'>résultat<span style="mso-spacerun: yes">             
+</span>admis<span style="mso-spacerun: yes">           </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Sinon </span><span style='font-family:
+Arial;color:black'><span style="mso-spacerun: yes">         </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1060" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:5;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="260.55pt,6.95pt" to="296.55pt,6.95pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:4;left:0px;margin-left:346px;margin-top:3px;width:51px;
+height:14px'><img width=51 height=14 src="./scena1_fichiers/image009.gif"
+v:shapes="_x0000_s1060"></span><![endif]><span style='font-family:Arial;
+color:black'>résultat<span style="mso-spacerun: yes">             
+</span>recalé<span style="mso-spacerun: yes">   </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>Finsi<o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1031"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1031"><![endif]><span
+style='mso-tab-count:1'>         </span>Instructions<span style="mso-spacerun:
+yes">  </span>a multiple choix<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>elles sont utilisé lorsque le nombre de chois dépasse
+deux<span style="mso-spacerun: yes">  </span>sa structure est ainsi :<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>selon que<span style="mso-spacerun:
+yes">                                                                                    
+</span></span><span style='font-family:Arial'><span style="mso-spacerun:
+yes">     </span>première expression logique<span style='color:blue'> faire </span>première
+séquence d'instructions<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>ou que</span><span style='font-family:
+Arial'> deuxième expression logique <span style='color:blue'>faire</span>
+deuxième séquence d'instructions<span style="mso-spacerun:
+yes">                                                                                               
+</span>.…………<span style="mso-spacerun:
+yes">                                                                                                   
+</span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>ou que</span><span style='font-family:
+Arial'> n ème expression logique <span style='color:blue'>faire</span> n ème
+séquence d'instructions<span style="mso-spacerun: yes">     </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>autrement</span><span style='font-family:
+Arial'> (n+1) ème séquence d'instructions<span style="mso-spacerun:
+yes">                                      </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>fin selon que<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:red'>Exemple&nbsp;:<span style="mso-spacerun:
+yes">       </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>selon que<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1061" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:6;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="343.05pt,7.75pt" to="370.05pt,7.75pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:5;left:0px;margin-left:456px;margin-top:4px;width:39px;
+height:14px'><img width=39 height=14 src="./scena1_fichiers/image010.gif"
+v:shapes="_x0000_s1061"></span><![endif]><span style='font-family:Arial'>note
+&gt; 16 <span style='color:blue'>faire</span> mention<span style="mso-spacerun:
+yes">            </span>très bien<span style="mso-spacerun: yes">      </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1063" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:8;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="438.3pt,6.95pt" to="465.3pt,6.95pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:6;left:0px;margin-left:583px;margin-top:3px;width:39px;
+height:14px'><img width=39 height=14 src="./scena1_fichiers/image011.gif"
+v:shapes="_x0000_s1063"></span><![endif]><span style='font-family:Arial;
+color:blue'>ou que</span><span style='font-family:Arial'> note &lt;= 16<span
+style="mso-spacerun: yes">  </span>Et note &gt;= 14<span style="mso-spacerun:
+yes">  </span>mention<span style="mso-spacerun: yes">          </span>bien<span
+style="mso-spacerun: yes">          </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>…………</span><span style='font-family:Arial'><span
+style="mso-spacerun:
+yes">                                                                                                             
+</span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1062" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:7;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="425.55pt,7.7pt" to="452.55pt,7.7pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:7;left:0px;margin-left:566px;margin-top:4px;width:39px;
+height:14px'><img width=39 height=14 src="./scena1_fichiers/image012.gif"
+v:shapes="_x0000_s1062"></span><![endif]><span style='font-family:Arial;
+color:blue'>ou que</span><span style='font-family:Arial'> note &lt;=12 Et
+note&gt;=10<span style="mso-spacerun: yes">  </span>mention<span
+style="mso-spacerun: yes">          </span>passable <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1064" style='position:absolute;left:0;text-align:left;flip:x;
+ z-index:9;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="319.8pt,7pt" to="346.8pt,7pt">
+ <v:stroke endarrow="block"/>
+ <w:wrap anchorx="page"/>
+</v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:8;left:0px;margin-left:425px;margin-top:3px;width:39px;
+height:14px'><img width=39 height=14 src="./scena1_fichiers/image013.gif"
+v:shapes="_x0000_s1064"></span><![endif]><span style='font-family:Arial;
+color:blue'>autrement</span><span style='font-family:Arial'><span
+style="mso-spacerun: yes">  </span>mention<span style="mso-spacerun:
+yes">          </span>recalé<span style="mso-spacerun: yes">         </span><span
+style="mso-spacerun:
+yes">                                                       </span><span
+style='color:blue'>fin selon que</span><o:p></o:p></span></p>
+
+<p style='margin-left:144.0pt;line-height:150%;tab-stops:list 162.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1032"
+ type="#_x0000_t75" style='width:10.5pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image003.gif" o:title="boule_jaune"/>
+</v:shape><![endif]--><![if !vml]><img width=14 height=14
+src="./scena1_fichiers/image003.gif" alt="*" v:shapes="_x0000_i1032"><![endif]><span
+style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+yes"> </span>Instructions répétitives <o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1033"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1033"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction tant que<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>Une boucle &quot;tant que&quot; se présente donc
+comme suit: <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>tant que</span><span style='font-family:
+Arial'> expression logique <span style='color:blue'>faire<span
+style="mso-spacerun: yes">     </span><o:p></o:p></span></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>séquence d'instructions<span style="mso-spacerun:
+yes">           </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>fin tant que<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>En premier lieu, l'expression logique est évaluée (il
+faut donc veiller à sa valeur lors de l'entrée dans la boucle): si sa valeur
+est vrai, le corps de la boucle est exécuté puis l'expression logique est
+réévaluée (il faut donc qu'elle puisse changer de valeur pour sortir de la
+boucle) et si elle a la valeur faux, on exécute l'instruction qui suit fin tant
+que. <o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1034"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1034"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction<span style="mso-spacerun:
+yes">  </span>pour<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>si le nombre d' exécutions du corps de la boucle
+étant connu à l'avance, une boucle &quot;pour&quot; est d'un emploi plus simple.
+Sa syntaxe est ainsi&nbsp;: <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>pour</span><span style='font-family:Arial'>
+variable de contrôle<span style="mso-spacerun: yes">  </span><span
+style='color:blue'>de</span> première<span style="mso-spacerun: yes"> 
+</span>valeur<span style="mso-spacerun: yes">  </span><span style='color:blue'>à</span>
+dernière valeur<span style="mso-spacerun: yes">  </span><span style='color:
+blue'>faire<span style="mso-spacerun: yes">            </span><o:p></o:p></span></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>séquence d'instructions<span style="mso-spacerun:
+yes">    </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>fait<span style="mso-spacerun:
+yes">            </span></span><span style='font-family:Arial'><span
+style="mso-spacerun: yes">         </span></span><span style='color:#000FFF'><o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1035"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1035"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction<span style="mso-spacerun:
+yes">    </span>répéter ... jusqu'à<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>Comme la boucle &quot;tant que&quot;, ce type de
+répétitive est utilisé lorsque le nombre de fois que la séquence d'instructions
+à répéter est inconnu au moment où cette séquence est abordée pour la première
+fois mais le corps de la boucle est toujours exécuté au moins une fois. <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>Sa formulation générale est&nbsp;: <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><span style="mso-spacerun: yes"> </span>Répéter<span
+style="mso-spacerun: yes">                         </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>séquence d'instructions<span style="mso-spacerun:
+yes">                 </span><o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>jusqu'à</span><span style='font-family:
+Arial'> (expression logique)<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>L'expression logique est évaluée après l'exécution du
+corps de la boucle: si sa valeur est faux, le corps de la boucle est exécuté à
+nouveau puis l'expression logique est réévaluée (il faut donc qu'elle puisse
+changer de valeur pour sortir de la boucle) et si elle a la valeur vrai, on
+exécute l'instruction qui suit jusqu'à. Attention, si ceci correspond tout à
+fait à l'usage familier que nous faisons de l'expression répéter ... jusqu'à,
+le test effectué est la négation de celui utilisé dans la boucle &quot;tant
+que&quot; et ceci peut parfois prêter à confusion. <o:p></o:p></span></p>
+
+<p style='margin-left:144.0pt;line-height:150%;tab-stops:list 162.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1036"
+ type="#_x0000_t75" style='width:10.5pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image003.gif" o:title="boule_jaune"/>
+</v:shape><![endif]--><![if !vml]><img width=14 height=14
+src="./scena1_fichiers/image003.gif" alt="*" v:shapes="_x0000_i1036"><![endif]><span
+style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+yes"> </span>Instructions d’entrée sortie <o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1037"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1037"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction de lecture<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'><span style="mso-spacerun: yes"> </span>l'instruction
+de lecture indique que l'utilisateur dois saisir des données. l'instructions de
+lecture (d'entrée) notée :<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>lire</span><span style='font-family:Arial'>
+variables<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:red'>Exemples:<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>lire</span><span style='font-family:Arial'>
+note_module<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>lire</span><span style='font-family:Arial'>
+coefficient<o:p></o:p></span></p>
+
+<p style='margin-left:162.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'><!--[if gte vml 1]><v:shape id="_x0000_i1038"
+ type="#_x0000_t75" style='width:23.25pt;height:10.5pt' o:bullet="t">
+ <v:imagedata src="./scena1_fichiers/image004.gif" o:title="boule_rouge"/>
+</v:shape><![endif]--><![if !vml]><img width=31 height=14
+src="./scena1_fichiers/image004.gif" alt="*" v:shapes="_x0000_i1038"><![endif]><span
+style='mso-tab-count:1'>         </span>Instruction d’écriture<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial'>Elle permet l'affichage d'un message et/ou du contenu
+d'une variable (ou du résultat d'un calcul).<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:red'>Exemples: <o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>écrire</span><span style='font-family:
+Arial'> &quot; Introduisez la note de l'algorithmique &quot;<o:p></o:p></span></p>
+
+<p style='margin-left:216.0pt;line-height:150%;tab-stops:list 180.0pt'><span
+style='font-family:Arial;color:blue'>écrire </span><span style='font-family:
+Arial'>&quot; la moyenne générale de l'étudiant est :&quot; , moyg<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

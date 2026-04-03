@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article>
+<name id="18957">Base de données orientée objet</name>
+<conversionwarning>0</conversionwarning>
+<body>
+<p>Les bases de données à objets sont un autre cas particulier des
+bases de données.</p>
+<p>Dans une telle organisation, les données sont représentées sous
+forme d'*objets*.</p>
+<p>un objet (cf. 
+<collectionlink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="13735.xml">Orienté objet</collectionlink>)
+représente une chose de la vie réelle, concrète ou abstraite comme
+une personne, une connexion FTP ou le ciel.</p>
+<p>Les objets contiennent les données qui les décrivent et qui
+représentent leur *état*. L'objet 'ciel' contient par exemple une
+variable qui stocke sa couleur.</p>
+<p>Les objets contiennent aussi la *logique* qui permet de les
+utiliser et de les modifier. On peut par exemple demander au ciel
+de changer de couleur en lui envoyant un message mentionnant la
+nouvelle couleur à utiliser.</p>Toutes ces entités sont classées
+hiérarchiquement dans une base de données à objets. Par exemple,
+l'objet 'bâtiment' contient plusieurs objets de type 'étage' et
+chaque objet étage contient plusieurs objets 'bureau'. On demande
+ensuite aux bureaux de stocker les objets 'personne' pour garder
+trace des affectations des gens. Ce qui donne : 
+<cadre>
+<cadre>bâtiment A 
+<cadre>
+<cadre>\--&gt; étage 0 
+<cadre>--&gt; étage 1 
+<cadre>
+<cadre>\--&gt; bureau A 
+<cadre>
+<cadre>
+<cadre>\--&gt; personne Toto</cadre>
+</cadre>--&gt; bureau B</cadre></cadre>
+</cadre></cadre></cadre>
+</cadre></cadre>
+</cadre>--&gt; étage 2 Pensez également à l'arborescence des
+répertoires et des fichiers dans votre ordinateur. 
+<p>Ce genre d'organisation se fait naturellement dans une base de
+données à objets alors que dans d'autres systèmes de bases, il faut
+garder trace de qui est le père et qui sont les fils.</p>Mais il y
+a parfois aussi besoin de retrouver les données comme dans une base
+relationnelle, par exemple. 
+<p>On pourrait alors avoir un autre objet qui va garder à jour la
+liste des personnes avec le chemin à parcourir pour les retrouver,
+indépendamment de leur affectation ou alors avec des critères de
+recherche.</p>
+<p>Quand les objets que l'on crée restent stockés dans la base de
+données à objets et pas seulement dans la 
+<collectionlink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="1983.xml">mémoire vive</collectionlink>, on
+dit qu'ils sont *persistants*.</p>
+<section>
+<title>Exemples de bases de données orientées objets</title>
+<p>Un des meilleurs exemples de 
+<collectionlink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="10907.xml">SGDB</collectionlink>orienté objet est le
+système 
+<collectionlink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="36137.xml">O2</collectionlink>.</p>
+<p>Il a été réalisé par le Groupement d'Intérêt Public ALTAIR,
+regroupant IN2, l'INRIA et le Laboratoire de Recherche en
+Informatique de l'Université d'Orsay. Il a d'abord été
+commercialisé par la société O2 Technology, puis par la société
+Ardent Software et enfin par la société Informix.</p>
+<p>O2 dispose d'un langage de description de schéma et d'un langage
+de programmation baptisé O2C et qui est une extension du langage C.
+Une application écrite en C ou C++ peut utiliser les services de O2
+pour assurer la persistance de ses données. Un langage de requête
+de type SQL appelé OQL pouvait être utilisé de manière interactive
+ou à l'intérieur d'un programme C++ ou O2C.</p>
+<p>Depuis 1999 cependant, 02 n'est plus commercialisé.</p>
+<p>Dans un cas plus concret, il existe un serveur d'applications
+Web du nom de 
+<collectionlink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="7299.xml">Zope</collectionlink>, qui utilise une
+base de données à objets hiérarchique couplée à un environnement de
+développement.</p>
+<p>Les exemples les plus connus à l'heure actuelle de base de
+données orientées objets sont les annuaires, qui sont capables de
+stocker une multitude d'informations. Ils stockent l'information
+dans des "objets", très souvent une fiche individuelle, une
+machine, une ressource... à laquelle on associe des valeurs, ses
+attributs.</p>
+<p>Les annuaires sont utilisés partout à l'heure actuelle; ceci
+plus particulièrement dans le monde de l'entreprise, pour stocker
+les informations propres à chaque personne (nom, prénom, fonction,
+adresse, numéros, droits, comptes, etc...)</p>
+<p>Il existe une multitude de protocole d'annuaires, dont les plus
+connus sont 
+<collectionlink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="27230.xml">LDAP</collectionlink>, et son ancêtre, 
+<unknownlink src="X.500">X.500</unknownlink>.</p>
+<languagelink lang="de">Objektorientiertes
+Datenbankmodell</languagelink>
+<languagelink lang="en">Object database</languagelink>
+<languagelink lang="ja">オブジェクトデータベース</languagelink>
+<languagelink lang="pl">Obiektowa baza danych</languagelink>
+<languagelink lang="pt">Object database</languagelink>
+<languagelink lang="ru">Объектно-ориентированная база
+данных</languagelink>
+</section></body>
+</article>
+
