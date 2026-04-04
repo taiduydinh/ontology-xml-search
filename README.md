@@ -191,17 +191,3 @@ If you use this code or build upon it in academic work, please cite the associat
 ```
 
 ---
-
-## License
-
-Add your preferred license here.
-
-Example:
-
-- MIT License
-- Apache License 2.0
-- GPL-3.0
-
-If you are sharing this repository mainly for academic reproducibility, you may also use a short notice such as:
-
-> This project is shared for academic and research purposes. Please cite the associated paper when using or adapting this code.
