@@ -16,7 +16,7 @@ Traditional information retrieval systems often return the same results for the 
 - **XML-aware indexing**
 - **ontology-based concept representation**
 - **user profile modeling**
-- **semantic similarity for ranking**
+- **semantic similarity for ranking**                         
 
 Documents, queries, and user profiles are represented as **weighted concept vectors** derived from the ontology. XML nodes are indexed and ranked to return more relevant, user-adapted results.
 
@@ -56,12 +56,60 @@ Webprototype/
 │   ├── fichier.xml
 │   ├── Fichier3.xml
 │   └── images/
+├── xml_collection/            # XML dataset used for indexing and retrieval experiments
 ├── onto.owl                   # Main ontology
 ├── onto3.owl                  # Additional ontology resource
 ├── fichier.xml                # XML sample/resource
 ├── fichier2.xml               # XML sample/resource
 └── catalog-v001.xml
 ```
+
+---
+
+## Datasets
+
+The repository includes an **XML document collection** under:
+
+```text
+xml_collection/
+```
+
+This folder contains XML files used for indexing and retrieval experiments, with filenames such as:
+
+```text
+doc_1.xml
+doc_2.xml
+doc_3.xml
+...
+```
+
+### Dataset notes
+
+- The experimental dataset described in the paper is a **custom XML corpus** built for personalized XML retrieval.
+- The collection is organized around **computer science topics** represented in the ontology.
+- The paper reports an evaluation setting with **400 XML documents** and **300 generated queries**.
+- In the repository, the XML files stored in `xml_collection/` are the document collection used by the prototype for indexing and search experiments.
+- Additional XML files such as `fichier.xml`, `fichier2.xml`, and files under `web/` may serve as sample resources, test inputs, or earlier development artifacts.
+
+### Domain coverage
+
+According to the paper, the XML collection covers multiple computer science domains, including:
+
+- **Computer Networks**
+- **Algorithms and Data Structures**
+- **Databases**
+- **Operating Systems**
+
+These domains are aligned with the ontology and support concept-based semantic indexing.
+
+### Using your own dataset
+
+If you want to adapt the project to another XML collection:
+
+1. replace or extend the files in `xml_collection/`
+2. update any hard-coded local paths in the Java source code
+3. ensure the ontology still matches the concepts present in the documents
+4. rebuild the indexes before running retrieval experiments
 
 ---
 
