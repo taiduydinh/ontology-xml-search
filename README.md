@@ -60,7 +60,6 @@ Webprototype/
 ├── onto.owl                   # Main ontology
 ├── onto3.owl                  # Additional ontology resource
 ├── fichier.xml                # XML sample/resource
-├── fichier2.xml               # XML sample/resource
 └── catalog-v001.xml
 ```
 
