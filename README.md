@@ -229,9 +229,9 @@ It may contain:
 If you use this code or build upon it in academic work, please cite the associated paper.
 
 ```bibtex
-@article{iddira2026ontology,
+@article{iddir2026ontology,
   title={Ontology-driven personalized information retrieval for XML documents},
-  author={Iddira, Ounnaci and Ahmed-ouamer, Rachida and Dinh, Tai},
+  author={Iddir, Ounnaci and Ahmed-ouamer, Rachid and Dinh, Tai},
   journal={arXiv preprint arXiv:2603.21139},
   year={2026}
 }
