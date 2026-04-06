@@ -1,0 +1,487 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+         xmlns:owl="http://www.w3.org/2002/07/owl#" 
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
+         xml:base="http://example.org/cs_ontology#">
+
+  <owl:Ontology rdf:about="http://example.org/cs_ontology#" />
+
+  <owl:Class rdf:about="http://example.org/cs_ontology#GenericConcept" />
+  <owl:Class rdf:about="http://example.org/cs_ontology#Domain"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+  <owl:Class rdf:about="http://example.org/cs_ontology#Path"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+  <owl:Class rdf:about="http://example.org/cs_ontology#Field"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+  <owl:Class rdf:about="http://example.org/cs_ontology#Element"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+  <owl:Class rdf:about="http://example.org/cs_ontology#Script"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+  <owl:Class rdf:about="http://example.org/cs_ontology#Granule"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+  <owl:Class rdf:about="http://example.org/cs_ontology#Concept"><rdfs:subClassOf rdf:resource="http://example.org/cs_ontology#GenericConcept" /></owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#encompasses">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Domain"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Path"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#generate">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Domain"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Field"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#isConstituted">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Path"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Field"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#isASet">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Field"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Element"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#isComposedOf">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Element"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Script"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#contributesDefine">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Element"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Granule"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#treat">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Script"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Granule"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#contributesTreat">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Script"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Concept"/>
+  </owl:ObjectProperty>
+  
+  <owl:ObjectProperty rdf:about="http://example.org/cs_ontology#form">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Granule"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Concept"/>
+  </owl:ObjectProperty>
+	
+	
+	<owl:ObjectProperty rdf:about="http://example.org/cs_ontology#dependson">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Element"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Element"/>
+	 <rdfs:domain rdf:resource="http://example.org/cs_ontology#Concept"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Concept"/>
+	  <rdfs:domain rdf:resource="http://example.org/cs_ontology#Granule"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Granule"/>
+	  <rdfs:domain rdf:resource="http://example.org/cs_ontology#Script"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Script"/>
+  </owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:about="http://example.org/cs_ontology#precededby">
+    <rdfs:domain rdf:resource="http://example.org/cs_ontology#Element"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Element"/>
+	 <rdfs:domain rdf:resource="http://example.org/cs_ontology#Concept"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Concept"/>
+	  <rdfs:domain rdf:resource="http://example.org/cs_ontology#Granule"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Granule"/>
+	  <rdfs:domain rdf:resource="http://example.org/cs_ontology#Script"/><rdfs:range rdf:resource="http://example.org/cs_ontology#Script"/>
+  </owl:ObjectProperty>
+
+		
+	
+	<owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ComputerScience">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Domain"/><hasWeight>0.1334</hasWeight>
+    
+	 <encompasses rdf:resource="http://example.org/cs_ontology#DatabaseSystems"/>
+    <encompasses rdf:resource="http://example.org/cs_ontology#ArtificialIntelligence"/>
+    <encompasses rdf:resource="http://example.org/cs_ontology#OperatingSystems"/>
+    <encompasses rdf:resource="http://example.org/cs_ontology#ComputerNetworks"/>
+	<encompasses rdf:resource="http://example.org/cs_ontology#ComputerSystemsEngineering"/>
+	
+	<generate rdf:resource="http://example.org/cs_ontology#RelationalDatabase"/>
+    <generate rdf:resource="http://example.org/cs_ontology#DeepLearning"/>
+    <generate rdf:resource="http://example.org/cs_ontology#MachineLearning"/>
+    <generate rdf:resource="http://example.org/cs_ontology#MemoryManagement"/>
+    <generate rdf:resource="http://example.org/cs_ontology#ProcessManagement"/>
+    <generate rdf:resource="http://example.org/cs_ontology#NetworkSecurity"/>
+    <generate rdf:resource="http://example.org/cs_ontology#NetworkingCommunicationProtocols"/>
+    <generate rdf:resource="http://example.org/cs_ontology#NoSQLSystems"/>
+    <generate rdf:resource="http://example.org/cs_ontology#TransactionManagement"/>
+    <generate rdf:resource="http://example.org/cs_ontology#SoftwareDesign"/>
+    <generate rdf:resource="http://example.org/cs_ontology#RequirementsEngineering"/>
+	<generate rdf:resource="http://example.org/cs_ontology#ProjectManagement"/>
+    </owl:NamedIndividual>
+	
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ComputerSystemsEngineering">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Path"/><hasWeight>0.1378</hasWeight>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#ProjectManagement"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#DatabaseSystems">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Path"/><hasWeight>0.1378</hasWeight>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#RelationalDatabase"/>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#NoSQLSystems"/>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#TransactionManagement"/>
+  </owl:NamedIndividual>
+  
+  
+ <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ArtificialIntelligence">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Path"/><hasWeight>0.1378</hasWeight>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#DeepLearning"/>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#MachineLearning"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#OperatingSystems">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Path"/><hasWeight>0.1378</hasWeight>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#MemoryManagement"/>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#ProcessManagement"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ComputerNetworks">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Path"/><hasWeight>0.1378</hasWeight>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#NetworkingCommunicationProtocols"/>
+    <isConstituted rdf:resource="http://example.org/cs_ontology#NetworkSecurity"/>
+  </owl:NamedIndividual>
+  
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#NetworkingCommunicationProtocols">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+    <isASet rdf:resource="http://example.org/cs_ontology#OSIModele"/>
+  </owl:NamedIndividual>
+  
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#OSIModele">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Element"/><hasWeight>0.1422</hasWeight>
+  <isComposedOf rdf:resource="http://example.org/cs_ontology#OSImodellayers"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#PhysicalLayer"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#DataLinkLayer"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#NetWorkLayer"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#TransportLayer"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#SessionLayer"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#PresentationLayer"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#AplicationLayer"/>
+  </owl:NamedIndividual>
+  
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#PhysicalLayer">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Bit"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Hub"/>
+   </owl:NamedIndividual>
+   
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#DataLinkLayer">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Protocol"/>
+  <treat rdf:resource="http://example.org/cs_ontology#Equipements"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#@MAC"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Switch"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Frames"/>
+     </owl:NamedIndividual>
+   
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#NetworkLayer">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Protocol"/>
+  <treat rdf:resource="http://example.org/cs_ontology#Equipements"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#@IP"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Router"/>
+    <contributesTreat rdf:resource="http://example.org/cs_ontology#Packets"/>
+	 <contributesTreat rdf:resource="http://example.org/cs_ontology#IP"/>
+     </owl:NamedIndividual>
+   
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#TransportLayer">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Protocol"/>
+  <treat rdf:resource="http://example.org/cs_ontology#Equipements"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#UDP"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#TCP"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Gateway"/>
+  
+     </owl:NamedIndividual>
+   
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Protocol">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#http"/>
+  <form rdf:resource="http://example.org/cs_ontology#ftp"/>
+  <form rdf:resource="http://example.org/cs_ontology#TCP"/>
+  <form rdf:resource="http://example.org/cs_ontology#IP"/>
+  <form rdf:resource="http://example.org/cs_ontology#UDP"/>
+  <form rdf:resource="http://example.org/cs_ontology#MAC"/>
+   </owl:NamedIndividual>
+   
+     <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Equipements">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Hub"/>
+  <form rdf:resource="http://example.org/cs_ontology#Switch"/>
+  <form rdf:resource="http://example.org/cs_ontology#Router"/>
+  <form rdf:resource="http://example.org/cs_ontology#Gateway"/>
+  
+      </owl:NamedIndividual>
+	  
+	  
+ <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#http">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ftp">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+	  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#IP">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+	  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#UDP">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#TCP">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Hub">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+	   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Switch">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+	   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Router">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Gateway">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+  
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#@MAC">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+  
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#@IP">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+	 
+	 <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Frames">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+	  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Packets">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+     </owl:NamedIndividual>
+  
+ <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ProjectManagement">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+    <isASet rdf:resource="http://example.org/cs_ontology#Algorithmic"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Algorithmic">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Element"/><hasWeight>0.1422</hasWeight>
+  <isComposedOf rdf:resource="http://example.org/cs_ontology#ControlStructures"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#CompleteConditional"/>
+  </owl:NamedIndividual>
+  
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ControlStructures">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#CompleteConditional"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#ConditionalInstructions"/>
+   </owl:NamedIndividual>
+   
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#CompleteConditional">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#ConditionalInstructions"/>
+   </owl:NamedIndividual>
+     
+ <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ConditionalInstructions">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+  
+  
+    
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#RelationalDatabase">
+    <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+    <isASet rdf:resource="http://example.org/cs_ontology#Database"/>
+	<isASet rdf:resource="http://example.org/cs_ontology#DBMS"/>
+	<isASet rdf:resource="http://example.org/cs_ontology#SQL"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#SQL">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Element"/><hasWeight>0.1422</hasWeight>
+  <isComposedOf rdf:resource="http://example.org/cs_ontology#DataDesciptionLanguage"/>
+<isComposedOf rdf:resource="http://example.org/cs_ontology#DataQueryLanguage"/>
+<isComposedOf rdf:resource="http://example.org/cs_ontology#DataControlLanguage"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#Create"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#Alter"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#Select"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#From"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#Where"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#GroupBy"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#Having"/>
+  </owl:NamedIndividual>
+  
+   <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#DataDesciptionLanguage">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Create"/>
+  <treat rdf:resource="http://example.org/cs_ontology#Alter"/>
+<contributesDefine rdf:resource="http://example.org/cs_ontology#Table"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#View"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Synonym"/>
+     </owl:NamedIndividual>
+   
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Create">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+   </owl:NamedIndividual>
+   
+    <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Alter">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+   </owl:NamedIndividual>
+     
+
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#DataQueryLanguage">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Select"/>
+  <treat rdf:resource="http://example.org/cs_ontology#From"/>
+  <treat rdf:resource="http://example.org/cs_ontology#Where"/>
+  <treat rdf:resource="http://example.org/cs_ontology#GroupBy"/>
+  <treat rdf:resource="http://example.org/cs_ontology#Having"/>
+  <contributesDefine rdf:resource="http://example.org/cs_ontology#Table"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#View"/>
+  <contributesTreat rdf:resource="http://example.org/cs_ontology#Synonym"/>
+  
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Select">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+   </owl:NamedIndividual>
+ 
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#From">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+   </owl:NamedIndividual>
+ 
+ 
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Where">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+   </owl:NamedIndividual>
+   
+    <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#GroupBy">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+    </owl:NamedIndividual>
+   
+    <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Having">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Table"/>
+<form rdf:resource="http://example.org/cs_ontology#View"/>
+<form rdf:resource="http://example.org/cs_ontology#Synonym"/>
+     </owl:NamedIndividual>
+   
+ 
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Table">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/cs_ontology#View">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Synonym">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+  
+  
+  
+  
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#NoSQLSystems">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#TransactionManagement">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#Transaction"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#DeepLearning">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#NeuralNetwork"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#MachineLearning">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#Model"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#MemoryManagement">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#Memory"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#ProcessManagement">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#Process"/>
+  <isASet rdf:resource="http://example.org/cs_ontology#Thread"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Routing">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#Router"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#NetworkProtocols">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  <isASet rdf:resource="http://example.org/cs_ontology#IP"/>
+  <isASet rdf:resource="http://example.org/cs_ontology#TCP"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#SoftwareDesign">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#RequirementsEngineering">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Field"/><hasWeight>0.14</hasWeight>
+  </owl:NamedIndividual>
+  
+  
+
+  
+   
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#NeuralNetwork">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Element"/><hasWeight>0.1422</hasWeight>
+  <isComposedOf rdf:resource="http://example.org/cs_ontology#TrainModel"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Process">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Element"/><hasWeight>0.1422</hasWeight>
+  <isComposedOf rdf:resource="http://example.org/cs_ontology#ScheduleProcess"/>
+  </owl:NamedIndividual>
+
+ 
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#SelectQuery">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Table"/>
+    </owl:NamedIndividual>
+	
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#TrainModel">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Script"/><hasWeight>0.1466</hasWeight>
+  <treat rdf:resource="http://example.org/cs_ontology#Backpropagation"/>
+  </owl:NamedIndividual>
+
+   
+ 
+  
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Table">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://example.org/cs_ontology#Consistency"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Backpropagation">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Granule"/><hasWeight>0.1488</hasWeight>
+  <form rdf:resource="http://resource#Learning"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Consistency">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Learning">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="http://example.org/cs_ontology#Accuracy">
+  <rdf:type rdf:resource="http://example.org/cs_ontology#Concept"/><hasWeight>0.151</hasWeight>
+  </owl:NamedIndividual>
+
+</rdf:RDF>
