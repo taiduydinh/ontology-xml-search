@@ -59,6 +59,7 @@ Webprototype/
 ├── xml_collection/            # XML dataset used for indexing and retrieval experiments
 ├── onto.owl                   # Main ontology
 ├── onto3.owl                  # Additional ontology resource
+├─ comp_sc_ontology.owl        # Coputer science ontology
 ├── fichier.xml                # XML sample/resource
 └── catalog-v001.xml
 ```
