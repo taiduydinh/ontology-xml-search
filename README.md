@@ -5,7 +5,7 @@ A Java web prototype for **personalized information retrieval over XML documents
 This repository accompanies the paper:
 
 **Ontology-driven personalized information retrieval for XML documents**  
-Ounnaci Iddira, Ahmed-ouamer Rachida, Tai Dinh
+Ounnaci Iddir, Ahmed-ouamer Rachid, Tai Dinh
 
 ---
 
