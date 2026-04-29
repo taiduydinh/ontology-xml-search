@@ -233,7 +233,6 @@ If you use this code or build upon it in academic work, please cite the associat
 This repository accompanies the submitted paper:
 Ontology-driven personalized information retrieval for XML documents
 Author information is omitted for double-blind review.
-}
 ```
 
 ---
