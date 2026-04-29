@@ -5,7 +5,7 @@ A Java web prototype for **personalized information retrieval over XML documents
 This repository accompanies the paper:
 
 **Ontology-driven personalized information retrieval for XML documents**  
-Ounnaci Iddir, Ahmed-ouamer Rachid, Tai Dinh
+Authors are omitted for double-blind review.
 
 ---
 
@@ -230,11 +230,9 @@ It may contain:
 If you use this code or build upon it in academic work, please cite the associated paper.
 
 ```bibtex
-@article{iddir2026ontology,
-  title={Ontology-driven personalized information retrieval for XML documents},
-  author={Iddir, Ounnaci and Ahmed-ouamer, Rachid and Dinh, Tai},
-  journal={arXiv preprint arXiv:2603.21139},
-  year={2026}
+This repository accompanies the submitted paper:
+Ontology-driven personalized information retrieval for XML documents
+Author information is omitted for double-blind review.
 }
 ```
 
